@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Logix — Upload Report for Solution</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="brand">Logix</a>
+    <nav class="topnav">
+      <a href="/" class="cta">Home</a>
+      <a href="/user-guide" class="cta">User Guide</a>
+    </nav>
+  </header>
+
+  <main class="layout-single">
+    <div class="card">
+      <h2 class="big">Want a solution? Upload your report</h2>
+      <p class="muted">Upload the Logix-generated report (.txt) or paste its contents below to get attack-specific guidance.</p>
+
+      <form action="/want-solution" method="post" enctype="multipart/form-data" class="form-grid" style="margin-top: 20px;">
+        <label class="file-label">
+          <input type="file" name="reportfile" accept=".txt" />
+          <span class="file-name">Choose a report file (optional)</span>
+        </label>
+
+        <label style="display:block; margin-top:12px;">
+          <textarea name="report_text" rows="10" style="width:100%; background-color: var(--primary-bg); border: 1px solid var(--border-color); color: var(--text-color); padding: 15px; border-radius: 10px;" placeholder="Or paste the report text here (optional)"></textarea>
+        </label>
+
+        <div style="margin-top:12px;">
+          <button class="btn" type="submit">Show Attack-specific Solutions</button>
+          <a href="/" class="btn" style="background:#555; color:#fff; margin-left:8px;">Back</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Logix • Demo build</div>
+  </footer>
+</body>
+</html>

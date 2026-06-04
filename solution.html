@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Logix — Analysis Result</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Logix</div>
+    <nav class="topnav">
+      <a href="/" class="cta">Home</a>
+      <a href="/user-guide" class="cta">User Guide</a>
+      <a href="/want-solution" class="cta">Want a solution?</a>
+    </nav>
+  </header>
+
+  <main class="layout-single">
+    <div class="card">
+      <h2 class="big">Analysis Summary</h2>
+      <p class="muted">Summary: <strong>{{ summary }}</strong></p>
+
+      {% if findings %}
+        <h3 class="big" style="margin-top: 30px;">Detailed Findings</h3>
+        {% for f in findings %}
+          <div class="finding">
+            <h4>{{ loop.index }}. {{ f.name }}</h4>
+            <p><strong>Severity:</strong> {{ f.severity }} &nbsp; <strong>Confidence:</strong> {{ f.confidence }} &nbsp; <strong>Count:</strong> {{ f.count }}</p>
+            {% if f.remediation %}
+              <p style="margin-top: 10px;"><strong>Suggested Remediation:</strong></p>
+              <ul>
+                {% for r in f.remediation %}
+                  <li>{{ r }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if f.precaution %}
+              <p style="margin-top: 10px;"><strong>Immediate Precaution:</strong> {{ f.precaution }}</p>
+            {% endif %}
+            {% if f.excerpt %}
+              <p style="margin-top: 10px;"><strong>Evidence (excerpt):</strong></p>
+              <pre class="evidence-pre">{% for e in f.excerpt %}{{ e }}
+{% endfor %}</pre>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No suspicious patterns detected by current rule-set.</p>
+      {% endif %}
+
+      <hr style="border-color: var(--border-color); margin: 30px 0;"/>
+      <h3>Full report</h3>
+      <p><a class="btn" href="/download/{{ report_name }}">Download full text report</a></p>
+
+      <hr style="border-color: var(--border-color); margin: 30px 0;"/>
+      <h3>Precautions & Beginner Guide</h3>
+      <div class="card small" style="background-color: var(--primary-bg);">
+        <pre class="guide-pre">{{ report_text }}</pre>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Logix • Demo build</div>
+  </footer>
+</body>
+</html>

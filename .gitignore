@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+uploads/
+.env
+templates/guide.txt 
+templates/static.html

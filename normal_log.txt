@@ -1,0 +1,10 @@
+2025-09-14 10:01:23 INFO User john logged in successfully from 192.168.1.10
+2025-09-14 10:01:25 INFO Process started: explorer.exe (PID=1234)
+2025-09-14 10:01:30 INFO File opened: C:\Users\john\Documents\report.docx
+2025-09-14 10:02:00 INFO Network connection established to 8.8.8.8:53 (DNS query)
+2025-09-14 10:02:05 INFO User mary logged in successfully from 192.168.1.12
+2025-09-14 10:03:00 INFO File saved: C:\Users\mary\Pictures\vacation.jpg
+2025-09-14 10:03:05 INFO System idle
+2025-09-14 10:04:10 INFO Scheduled task executed: WindowsUpdate
+...
+(repeat similar "INFO, SUCCESS, normal activities" ~5000–6000 lines with random timestamps, users, IPs, file ops)
